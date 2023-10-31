@@ -2,24 +2,22 @@
 
     <div class="flex-shrink-0">
 
-        <img src="https://i.pravatar.cc/60" width="60" height="60" class="rounded-xl">
+        <img src="https://i.pravatar.cc/60?u={{ $comment->author->id }}" width="60" height="60" class="rounded-xl">
     </div>
 
     <div>
 
         <header class="mb-4">
 
-            <h3 class="font-bold">John Doe</h3>
+            <h3 class="font-bold">{{ $comment->author->name }}</h3>
 
             <p class="text-xs">Posted
-                <time>8 months ago</time>
+                <time>{{ $comment->created_at->format("F j, Y, g:i a") }}</time>
             </p>
         </header>
 
         <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            {{ $comment->body }}
         </p>
     </div>
 </article>
